@@ -49,7 +49,7 @@ char **parse(char *buffer)
 	char **cmds, *cmd, *delim;
 	int i = 0;
 
-	delim = "\t \n";
+	delim = "\t\n ";
 	cmds = malloc(sizeof(char *) * 3);
 	if (cmds == NULL)
 	{
