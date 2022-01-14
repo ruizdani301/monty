@@ -81,7 +81,8 @@ void is_opcode(char *buff, stack_t **st, unsigned int ln)
 	char **cmds;
 	instruction_t opts[] = {
 		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop},
-		{"swap", swap}, {NULL, NULL}
+		{"swap", swap}, {"nop", nop}, {"add", add}, {"sub", sub},
+		{"div", _div}, {"mod", mod}, {NULL, NULL}
 	};
 	int i = 0, j = 0, len, b = 0, len2;
 
