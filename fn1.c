@@ -78,19 +78,16 @@ void nop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * swap - entry point
- * @stack: stack_t variable
- * @line_number: unsigned int variable
-*/
-
+ * swap - swaps the top two elements of the stack.
+ * @stack: struct stack_t
+ * @line_number: line number to show in error case
+ */
 void swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp;
-	stack_t *tmp1;
-	int value = 0;
+	stack_t *tmp = *stack;
+	stack_t *tmp1 = *stack;
+	int save = 0;
 
-	tmp = *stack;
-	tmp1 = *stack;
 	if ((tmp == NULL) || (tmp->next == NULL))
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
@@ -98,7 +95,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	}
 
 	tmp1 = tmp1->next;
-	value = tmp1->n;
+	save = tmp1->n;
 	tmp1->n = tmp->n;
-	tmp->n = value;
+	tmp->n = save;
 }
