@@ -4,7 +4,7 @@
 ******************************************
 <h1>The Monty language<h1>
 
-<p>Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. The goal of this project is to create an interpreter for Monty ByteCodes files.<p>
+<p>Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it; The goal of this project is to create an interpreter for Monty ByteCodes files.<p>
 
 <h2>Monty byte code files<h2>
 
