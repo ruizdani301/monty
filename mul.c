@@ -9,7 +9,7 @@
  */
 void mul(stack_t **stack, unsigned int line_number)
 {
-    stack_t *tmp = *stack;
+	stack_t *tmp = *stack;
 	int n;
 
 	if ((tmp == NULL) || (tmp->next == NULL))

@@ -9,10 +9,10 @@
  */
 void pchar(stack_t **stack, unsigned int line_number)
 {
-    stack_t *tmp = *stack;
+	stack_t *tmp = *stack;
 	int ch;
 
-    if (tmp == NULL)
+	if (tmp == NULL)
 	{
 		fprintf(stderr,
 			"L%u: can't pchar, stack empty\n",
