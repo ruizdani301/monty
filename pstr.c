@@ -15,7 +15,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 	while (tmp != NULL)
 	{
 		str = tmp->n;
-		if (str > 0 && str <= 127)
+		if (str > 0 && str < 127)
 		{
 			putchar(str);
 		}
