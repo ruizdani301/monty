@@ -9,12 +9,13 @@
 void pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = *stack;
-	int str = 0;
+	int str;
 
-	while (tmp->next != NULL && tmp->n != 0)
+	(void)line_number;
+	while (tmp != NULL)
 	{
 		str = tmp->n;
-		if (str > 0 && str < 127)
+		if (str > 0 && str <= 127)
 		{
 			putchar(str);
 		}
@@ -25,5 +26,4 @@ void pstr(stack_t **stack, unsigned int line_number)
 		tmp = tmp->next;
 	}
 	putchar(10);
-	(void)line_number;
 }
