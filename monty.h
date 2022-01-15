@@ -51,9 +51,7 @@ void _div(stack_t **, unsigned int);
 void mul(stack_t **, unsigned int);
 void mod(stack_t **, unsigned int);
 void pstr(stack_t **stack, unsigned int line_number);
-
-
-
+void rotl(stack_t **stack, unsigned int line_number);
 int _isdigit(int);
 void is_opcode(char *, stack_t **, unsigned int);
 FILE *read_file(char *file_name);
