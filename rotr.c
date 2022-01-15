@@ -1,0 +1,27 @@
+#include "monty.h"
+
+/**
+ * rotr - turn top to the last in the stack.
+ * @stack: struct stack_t
+ * @line_number: line number to show in error case
+ */
+void rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = *stack;
+
+	if ((tmp == NULL) || (tmp->next == NULL))
+	{
+		return;
+	}
+	(void)line_number;
+	while (tmp->next != NULL)
+	{
+		tmp = tmp->next;
+	}
+	tmp->next = *stack;
+	tmp = tmp->prev;
+	tmp->next->prev = NULL;
+	(*stack)->prev = tmp->next;
+	tmp->next = NULL;
+	(*stack) = (*stack)->prev;
+}
