@@ -1,0 +1,58 @@
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+typedef struct stack_s
+{
+        int n;
+        struct stack_s *prev;
+        struct stack_s *next;
+} stack_t;
+
+void push(stack_t **stack, unsigned int line_number)
+{
+        stack_t *temp;
+        stack_t *new;
+
+        temp = *stack;
+        new = malloc(sizeof(stack_t));
+        new->n = line_number;
+        new->prev = NULL;
+        new->next = *stack;
+        if (temp != NULL)
+            temp->prev = new;
+        *stack = new;
+}
+
+void rotl(stack_t **stack, unsigned int line_number)
+{
+  stack_t *tmp = *stack;
+
+  (void)line_number;
+  while (tmp->next != NULL)
+  {
+    tmp = (tmp)->next;
+  }
+  tmp->next = *stack;
+  *stack = (*stack)->next;
+  (*stack)->prev->next = NULL;
+  (*stack)->prev = NULL;
+  tmp->next->prev = tmp;
+  tmp = tmp->next;
+}
+
+int main(void)
+{
+    stack_t *head;
+
+    head = NULL;
+    push(&head, 1);
+    push(&head, 2);
+    push(&head, 3);
+    push(&head, 0);
+    rotl(&head, 9);
+    return (EXIT_SUCCESS);
+}
